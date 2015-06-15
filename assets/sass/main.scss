@@ -9,16 +9,17 @@
 $width: 980px;
 $footer: 100px;
 $footer_margin: $footer - 2 * $footer;
-$color: #444;
-$color_a: #000;
+$color: #616161;
+$color_a: #005689;
 $trs: all .5s;
 
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 1em;
   font-weight: normal;
 
   color: $color;
+  background-color: #f7f7f7;
 }
 a {
   transition: $trs;
@@ -76,14 +77,37 @@ header {
 }
 
 
+
 section {
-  width: $width;
+  width: 100%;
   padding: 0 0 $footer;
+  .block-left,
+  .block-right,
+  .block-wide {
+    padding: .6em;
+  }
 }
 
+.block-left {
+  float: left;
 
+  width: 34%;
 
+  border-left: 1px solid $color;
+}
+.block-right {
+  float: right;
 
+  width: 66%;
+
+  border-right: 1px solid $color;
+  border-left: 1px solid $color;
+}
+.block-wide {
+  float: left;
+
+  width: 100%;
+}
 
 
 
