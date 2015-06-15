@@ -146,16 +146,17 @@ section {
 
     @extend .clearfix;
     a {
+      font-size: 1em;
+
       float: right;
 
       text-decoration: none;
 
       border-top: 1px dotted $color_a;
       border-bottom: 1px dotted $color_a;
-      font-size: 1em;
       &:hover {
-        border-bottom: 1px solid transparent;
         border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
       }
     }
   }
@@ -180,6 +181,8 @@ section {
         }
         h5 {
           margin: 0 0 .5em;
+
+          color: $color;
         }
         p {
           margin: 0 0 1.2em;
