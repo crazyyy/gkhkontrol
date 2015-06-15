@@ -11,12 +11,17 @@ $footer: 100px;
 $footer_margin: $footer - 2 * $footer;
 $color: #616161;
 $color_a: #005689;
+$color_blue: #599dd4;
+$color_green: #89af24;
+$blue: lighten($color_blue, 20%);
+$green: lighten($color_green, 20%);
 $trs: all .5s;
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
   font-weight: normal;
+  line-height: 1.2;
 
   color: $color;
   background-color: #f7f7f7;
@@ -32,7 +37,14 @@ a {
     color: lighten($color_a, 20%);
   }
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
 .wrapper {
   position: relative;
 
@@ -47,16 +59,28 @@ a {
 
   width: $width;
   margin: 0 auto;
+
+  @extend .clearfix;
 }
 
 header {
   .logo {
     display: block;
+    float: left;
 
     width: 100px;
+    margin: .5em;
     img {
       max-width: 100%;
     }
+  }
+  h2 {
+    margin: .5em;
+  }
+  .description {
+    font-size: .8em;
+
+    padding: .6em;
   }
 }
 
@@ -86,29 +110,84 @@ section {
   .block-wide {
     padding: .6em;
   }
+  .block-news {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
+.block-left,
+.block-right,
+.block-wide {
+  @extend .clearfix;
+}
 .block-left {
   float: left;
 
   width: 34%;
 
-  border-left: 1px solid $color;
+  background-color: $blue;
 }
 .block-right {
   float: right;
 
   width: 66%;
 
-  border-right: 1px solid $color;
-  border-left: 1px solid $color;
+  background-color: $green;
 }
 .block-wide {
   float: left;
 
   width: 100%;
 }
+.block-news {
+  h3 {
+    font-size: 1.5em;
 
+    @extend .clearfix;
+    a {
+      float: right;
+
+      text-decoration: none;
+
+      border-top: 1px dotted $color_a;
+      border-bottom: 1px dotted $color_a;
+      font-size: 1em;
+      &:hover {
+        border-bottom: 1px solid transparent;
+        border-top: 1px solid transparent;
+      }
+    }
+  }
+  ul {
+    @extend .clearfix;
+    li {
+      float: left;
+      overflow: hidden;
+
+      width: 20%;
+      height: 345px;
+      margin: 0 0 1em;
+      padding: .5em;
+      a {
+        display: block;
+
+        text-decoration: none;
+        img {
+          width: 100%;
+          height: 216px;
+          margin: 0 0 .5em;
+        }
+        h5 {
+          margin: 0 0 .5em;
+        }
+        p {
+          margin: 0 0 1.2em;
+        }
+      }
+    }
+  }
+}
 
 
 footer {
