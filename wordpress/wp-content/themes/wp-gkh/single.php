@@ -14,7 +14,7 @@
 			<!-- /post thumbnail -->
 
 			<h1 class="single-title inner-title"><?php the_title(); ?></h1>
-
+      <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
 			<!-- post details -->
 			<span class="date"><?php the_time('d F Y'); ?> <?php the_time('H:i'); ?></span>
 			<span class="author"><?php _e( 'Published by', 'wpeasy' ); ?> <?php the_author_posts_link(); ?></span>
